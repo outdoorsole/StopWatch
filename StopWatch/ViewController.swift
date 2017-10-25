@@ -9,6 +9,8 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    @IBOutlet weak var timerLabel: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +22,13 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func startButton(_ sender: UIButton) {
+        print("start button tapped")
+    }
+    
+    @IBAction func stopButton(_ sender: UIButton) {
+        print("stop button tapped")
+    }
 
 }
 
