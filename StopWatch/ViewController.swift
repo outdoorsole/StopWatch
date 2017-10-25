@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     
     // Create an instance of StopWatch object as a property of ViewController class
     var watch = StopWatch()
+    var timer = Timer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +28,11 @@ class ViewController: UIViewController {
 
     @IBAction func startButton(_ sender: UIButton) {
         print("start button tapped")
+        // Begin stopwatch
         watch.start()
+        while watch.isRunning() {
+            print(watch.elapsedTime())
+        }
     }
     
     @IBAction func stopButton(_ sender: UIButton) {
