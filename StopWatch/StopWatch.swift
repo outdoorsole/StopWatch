@@ -8,6 +8,7 @@
 
 import Foundation
 
+// MODEL
 class StopWatch {
     var startTime: Date?
     
@@ -26,7 +27,15 @@ class StopWatch {
             return 0
         } else {
             // Know it's not nil, so can safely unwrap it
-            return startTime!.timeIntervalSinceNow
+            return startTime!.timeIntervalSinceNow * -1
+        }
+    }
+    
+    func isRunning() -> Bool {
+        if startTime != nil {
+            return true
+        } else {
+            return false
         }
     }
 }

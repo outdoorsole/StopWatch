@@ -11,7 +11,10 @@ import UIKit
 class ViewController: UIViewController {
     
     @IBOutlet weak var timerLabel: UILabel!
-
+    
+    // Create an instance of StopWatch object as a property of ViewController class
+    var watch = StopWatch()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -24,10 +27,13 @@ class ViewController: UIViewController {
 
     @IBAction func startButton(_ sender: UIButton) {
         print("start button tapped")
+        watch.start()
     }
     
     @IBAction func stopButton(_ sender: UIButton) {
         print("stop button tapped")
+        print(watch.elapsedTime())
+        watch.stop()
     }
 
 }
