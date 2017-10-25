@@ -48,6 +48,7 @@ class ViewController: UIViewController {
 
     func updateElapsedTime() {
         print(watch.elapsedTime())
+        timerLabel.text = String(format: "%2f", watch.elapsedTime())
     }
 }
 

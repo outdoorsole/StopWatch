@@ -13,13 +13,20 @@ class StopWatch {
     var startTime: Date?
     
     func start() {
-        // Record the current time to startTime
-        startTime = Date()
+        // Check, only start if not currently running
+        if !isRunning() {
+            // Set the start time
+            // Record the current time to startTime
+            startTime = Date()
+        }
     }
     
     func stop() {
-        // Set the start time back to nil (watch is no longer running)
-        startTime = nil
+        // Check, only stop if currently running
+        if isRunning() {
+            // Set the start time back to nil (watch is no longer running)
+            startTime = nil
+        }
     }
     
     func elapsedTime() -> TimeInterval {
