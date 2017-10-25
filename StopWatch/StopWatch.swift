@@ -17,6 +17,16 @@ class StopWatch {
     }
     
     func stop() {
-        
+        // Set the start time back to nil (watch is no longer running)
+        startTime = nil
+    }
+    
+    func elapsedTime() -> TimeInterval {
+        if startTime == nil {
+            return 0
+        } else {
+            // Know it's not nil, so can safely unwrap it
+            return startTime!.timeIntervalSinceNow
+        }
     }
 }
