@@ -30,7 +30,7 @@ class ViewController: UIViewController {
         print("start button tapped")
         // Begin stopwatch
         if !watch.isRunning() {
-            // Not running, so don't need to stop it
+            // Not running, so need to start timer
             watch.start()
             timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateElapsedTime), userInfo: nil, repeats: true)
         }
