@@ -30,7 +30,7 @@ class ViewController: UIViewController {
         print("start button tapped")
         // Begin stopwatch
         watch.start()
-        if watch.isRunning() == false {
+        if !watch.isRunning() {
             // Not running, so don't need to stop it
             watch.start()
         }
@@ -38,7 +38,7 @@ class ViewController: UIViewController {
     
     @IBAction func stopButton(_ sender: UIButton) {
         print("stop button tapped")
-        if watch.isRunning() == true {
+        if watch.isRunning() {
             // It's running, so need to stop it
             watch.stop()
         }
