@@ -29,10 +29,10 @@ class ViewController: UIViewController {
     @IBAction func startButton(_ sender: UIButton) {
         print("start button tapped")
         // Begin stopwatch
-        watch.start()
         if !watch.isRunning() {
             // Not running, so don't need to stop it
             watch.start()
+            timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateElapsedTime), userInfo: nil, repeats: true)
         }
     }
     
@@ -44,5 +44,8 @@ class ViewController: UIViewController {
         }
     }
 
+    func updateElapsedTime() {
+        print(watch.elapsedTime())
+    }
 }
 
