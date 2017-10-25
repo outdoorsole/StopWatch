@@ -41,6 +41,8 @@ class ViewController: UIViewController {
         if watch.isRunning() {
             // It's running, so need to stop it
             watch.stop()
+            // Stops the receiver from firing again
+            timer.invalidate()
         }
     }
 
